@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NicoNicontroller</title>
+<link rel="stylesheet" type="text/css" href="controlbar.css">
+
+<script type="text/javascript">
+
+window.addEventListener("load", function () {
+    var handleButton = function (ev) {
+        var operation = ev.target.id.match(/^button\-(.+)$/)[1];
+        try {
+            safari.application.activeBrowserWindow.activeTab.page.dispatchMessage(
+                "button_pushed", operation);
+        } catch (e) {
+        }
+        ev.preventDefault();
+    };
+
+    var buttons = document.getElementsByClassName("button");
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", handleButton, false);
+    }
+}, false);
+
+</script>
+
+</head>
+<body>
+
+<h1>NiCtl</h1>
+
+<a href="#" id="button-play" class="button">Play</a>
+<a href="#" id="button-pause" class="button">Pause</a>
+<a href="#" id="button-stop" class="button">Stop</a>
+<a href="#" id="button-rewind" class="button">Rewind</a>
+<a href="#" id="button-full" class="button">Full</a>
+<a href="#" id="button-mute" class="button">Mute</a>
+
+</body>
+</html>

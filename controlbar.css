@@ -1,0 +1,27 @@
+
+h1 {
+    display: inline;
+    font-size: 100%;
+    color: #666;
+    margin-right: 10px;
+}
+
+a.button {
+    display: inline-block;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 0 6px;
+    line-height: 16px;
+}
+a.button:link,
+a.button:visited {
+    color: #333;
+}
+a.button:hover {
+    background: #888;
+    color: #FFF;
+}
+a.button:active {
+    background: #333;
+    color: #FFF;
+}
